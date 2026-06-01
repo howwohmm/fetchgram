@@ -3,7 +3,7 @@
 fetchgram pulls any public profile, reads the text off every image, and scores each post against its own era — so a growing account never gets mistaken for good content.
 
 ```
-$ pipx install fetchgram
+$ pipx install git+https://github.com/howwohmm/fetchgram
 $ fetchgram analyze nike
 ```
 
@@ -48,14 +48,16 @@ out comes a text corpus, a training-ready JSONL, a metrics.json, and a plain-eng
 ## install
 
 ```
-pipx install fetchgram
+pipx install git+https://github.com/howwohmm/fetchgram
 ```
 
 or with pip:
 
 ```
-pip install fetchgram
+pip install git+https://github.com/howwohmm/fetchgram
 ```
+
+> _PyPI release (`pipx install fetchgram`) coming soon._
 
 **OCR dependencies:**
 
