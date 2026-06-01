@@ -1,0 +1,130 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>fetchgram — launch thread</title>
+<style>
+@font-face{font-family:Geist;font-weight:400;src:url('_assets/fonts/Geist-Regular.ttf')}
+@font-face{font-family:Geist;font-weight:500;src:url('_assets/fonts/Geist-Medium.ttf')}
+@font-face{font-family:Geist;font-weight:600;src:url('_assets/fonts/Geist-SemiBold.ttf')}
+@font-face{font-family:Geist;font-weight:700;src:url('_assets/fonts/Geist-Bold.ttf')}
+@font-face{font-family:Plex;font-weight:400;src:url('_assets/fonts/IBMPlexMono-Regular.ttf')}
+:root{--bg:#f7f8fa;--ink:#15171a;--mut:#5b6470;--line:#e4e7eb;--acc:#1d9bf0;--card:#fff;--ok:#16a34a;--warn:#c2410c}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font-family:Geist,-apple-system,sans-serif;font-size:16px;line-height:1.5;-webkit-font-smoothing:antialiased}
+.wrap{max-width:600px;margin:0 auto;padding:48px 20px 100px}
+.kick{font-family:Plex;font-size:12px;letter-spacing:.06em;color:var(--mut)}
+h1{font-size:30px;font-weight:700;letter-spacing:-.6px;margin:8px 0 4px}
+.live{font-size:14px}.live a{color:var(--acc);text-decoration:none;font-weight:500}
+.tweet{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 18px;margin:14px 0;position:relative}
+.tweet.main{border-color:#bcdffb;box-shadow:0 0 0 3px #eaf5fe}
+.tweet.reply{margin-left:26px}
+.tweet.reply::before{content:"↳ first reply";position:absolute;top:-9px;left:14px;background:var(--bg);font-size:11px;color:var(--mut);font-family:Plex;padding:0 6px}
+.who{display:flex;align-items:center;gap:9px;margin-bottom:9px}
+.av{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#5a4af0,#1d9bf0)}
+.who b{font-size:14.5px}.who span{color:var(--mut);font-size:13.5px}
+.body{white-space:pre-wrap;font-size:15.5px;line-height:1.55}
+.body .hl{background:#fff3cd;border-radius:3px;padding:0 2px}
+.cc{margin-top:11px;font-family:Plex;font-size:11.5px;color:var(--mut);display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:8px}
+.cc .n{font-weight:500}
+.cc .ok{color:var(--ok)}.cc .warn{color:var(--warn)}
+.note{font-size:13px;color:var(--mut);background:#fffbeb;border:1px solid #fde68a;border-radius:10px;padding:12px 14px;margin:18px 0}
+h2{font-size:13px;font-family:Plex;text-transform:uppercase;letter-spacing:.1em;color:var(--mut);margin:40px 0 10px}
+.alt{background:var(--card);border:1px dashed var(--line);border-radius:12px;padding:14px 16px;margin:10px 0;font-size:14.5px;white-space:pre-wrap;line-height:1.55}
+.alt .lbl{font-family:Plex;font-size:11px;color:var(--acc);text-transform:uppercase;letter-spacing:.06em;display:block;margin-bottom:6px}
+.foot{color:var(--mut);font-size:12px;font-family:Plex;text-align:center;margin-top:40px}
+</style></head><body><div class="wrap">
+
+<div class="kick">launch thread · ready to paste</div>
+<h1>fetchgram</h1>
+<div class="live">live → <a href="https://github.com/howwohmm/fetchgram">github.com/howwohmm/fetchgram</a></div>
+
+<div class="note">⚠️ each tweet's char count is shown below it. <b>over 280?</b> you need X Premium for long posts — otherwise trim to the marked limit. the main tweet is built to keep the "11.5×" proof above the "show more" fold either way.</div>
+
+<div class="tweet main" data-cc>
+  <div class="who"><div class="av"></div><b>ohm</b><span>@ohmdreams</span></div>
+  <div class="body">the most-repeated stat in this space is a lie.
+
+"carousels get 11x more likes." i ran it on a real wellness brand and watched it collapse.
+
+era-adjusted, that <span class="hl">11.5x lift was ~90% just the account growing</span> that year. against its own contemporaries, carousels were dead average.
+
+almost every "what works on instagram" thread is survivorship bias wearing a lab coat. so i built the tool that controls for it.</div>
+  <div class="cc"><span class="n" data-n></span><span>main tweet · hook + proof above the fold</span></div>
+</div>
+
+<div class="tweet" data-cc>
+  <div class="who"><div class="av"></div><b>ohm</b><span>@ohmdreams · 2/5</span></div>
+  <div class="body">the fix is dumb and nobody ships it:
+
+compare a post to what that same account posted ±45 days around it. not its all-time average.
+
+growth and recency cancel out. you stop measuring the calendar and start measuring the content.
+
+raw engagement is a clock, not a verdict.</div>
+  <div class="cc"><span class="n" data-n></span><span>the mechanism</span></div>
+</div>
+
+<div class="tweet" data-cc>
+  <div class="who"><div class="av"></div><b>ohm</b><span>@ohmdreams · 3/5</span></div>
+  <div class="body">most scrapers grab the caption and quit.
+
+this one OCRs every frame. quote graphics, carousel slides, on-image text — all become searchable data. apple vision on mac, tesseract everywhere else.
+
+turns out the words inside the image are the whole game for a lot of accounts.</div>
+  <div class="cc"><span class="n" data-n></span><span>the OCR angle</span></div>
+</div>
+
+<div class="tweet" data-cc>
+  <div class="who"><div class="av"></div><b>ohm</b><span>@ohmdreams · 4/5</span></div>
+  <div class="body">no signup. no api key. no cloud. runs on your machine, data never leaves it.
+
+what you get:
+- a clean text corpus
+- training-ready jsonl
+- a metrics.json
+- a plain-english report
+
+drop any of it into an llm and ask your own questions. built on 7 accounts, 5,060 posts. open source, MIT.</div>
+  <div class="cc"><span class="n" data-n></span><span>the deliverables (DM-share trigger)</span></div>
+</div>
+
+<div class="tweet reply" data-cc>
+  <div class="who"><div class="av"></div><b>ohm</b><span>@ohmdreams</span></div>
+  <div class="body">it's called fetchgram. free, runs locally:
+
+github.com/howwohmm/fetchgram
+
+pipx install git+https://github.com/howwohmm/fetchgram
+fetchgram analyze nike
+
+if you've ever quoted a "carousels win" stat, run it on that account first. tell me what you find.</div>
+  <div class="cc"><span class="n" data-n></span><span>link lives HERE (dodges X's out-of-network penalty)</span></div>
+</div>
+
+<h2>alternative main hooks</h2>
+<div class="alt"><span class="lbl">alt A — luck vs skill (sharpest on the USP)</span>you can't tell luck from skill on an instagram account by looking at the likes.
+
+a growing account makes garbage look like genius — every post beats the all-time average just because more people are watching now.
+
+one wellness brand's famous "11.5x carousel lift" was ~90% just growth. era-adjusted: dead average.
+
+built a tool that strips the noise out.</div>
+<div class="alt"><span class="lbl">alt B — build-log confession (most disarming)</span>spent a week proving that most of what people swear "works" on instagram is survivorship bias.
+
+the smoking gun: an account's "11.5x carousel lift" was ~90% just the account growing that year. against its own era, carousels did nothing.
+
+the numbers everyone quotes measure time, not talent. so i open-sourced the fix.</div>
+
+<div class="note" style="background:#eef6ff;border-color:#bcdffb">📸 <b>attach an image to the main tweet</b> (text-only posts rank lower): a dark terminal screenshot of SIGNAL.md showing raw <b>11.5×</b> next to era-adjusted <b>~1.0×</b> — visual proof of the one claim the whole thread rests on. i can generate that next.</div>
+
+<div class="foot">fetchgram · the obvious numbers lie</div>
+
+<script>
+document.querySelectorAll('[data-cc]').forEach(t=>{
+  const txt=t.querySelector('.body').innerText;
+  const n=t.querySelector('[data-n]');
+  const len=txt.length;
+  const over=len>280;
+  n.innerHTML=`<span class="${over?'warn':'ok'}">${len} chars</span> ${over?'· needs Premium or trim to 280':'· fits free'}`;
+});
+</script>
+</div></body></html>

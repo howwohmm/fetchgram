@@ -128,6 +128,13 @@ def scrape_profile(
     raw_dir = data_root / handle / "raw"
     raw_dir.mkdir(parents=True, exist_ok=True)
 
+    if not login:
+        logger.warning(
+            "no --login given — Instagram blocks anonymous access (403) for most "
+            "profiles now. if this fails, log in once with `instaloader -l <username>` "
+            "then pass `--login <username>`."
+        )
+
     done_marker = data_root / handle / ".download.done"
     if force and done_marker.exists():
         logger.info("--force set: removing stale .download.done marker for %s.", handle)

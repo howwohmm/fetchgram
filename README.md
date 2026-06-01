@@ -52,7 +52,8 @@ that's it. that's the whole trick. most tools skip it.
 
 ```
 pipx install git+https://github.com/howwohmm/fetchgram
-fetchgram analyze nike
+instaloader -l YOUR_IG_USERNAME          # log in once — Instagram blocks anonymous access
+fetchgram analyze nike --login YOUR_IG_USERNAME
 ```
 
 one command runs the whole pipeline: scrape → OCR → corpus → era-adjusted report. open `fetchgram-data/nike/signal/SIGNAL.md` and read.
@@ -100,14 +101,14 @@ fetchgram metrics <handle> [--out DIR]
 ```
 
 ```
-fetchgram analyze nike                       # public account, no login
+fetchgram analyze nike --login you           # log in first — IG 403s anonymous
 fetchgram analyze patagonia --login myuser   # logged in = more posts, less throttling
 fetchgram analyze someaccount --count 200    # last 200 posts only
 fetchgram analyze brand --ocr none           # captions only (fast)
 fetchgram analyze brand --out ~/data/ig      # custom output dir
 ```
 
-> **login:** run `instaloader -l <your_ig_username>` once to create a session, then pass `--login <your_ig_username>`. anonymous works for small public accounts but rate-limits fast.
+> **login is required.** Instagram now 403s anonymous graphql requests. log in once with `instaloader -l <your_ig_username>` (creates a reusable session), then pass `--login <your_ig_username>`. use your own account, at a sane volume — heavy scraping gets the session throttled.
 
 ## output layout
 
