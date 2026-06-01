@@ -9,7 +9,7 @@ description = "Era-adjusted Instagram content intelligence — scrape, OCR, and 
 readme = "README.md"
 license = { file = "LICENSE" }
 requires-python = ">=3.9"
-authors = [{ name = "ohm", email = "ohm@ohm.quest" }]
+authors = [{ name = "ohm (@ohmdreams)" }]
 keywords = ["instagram", "scraper", "ocr", "analytics", "content-strategy"]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -38,8 +38,8 @@ dependencies = [
 fetchgram = "fetchgram.cli:main"
 
 [project.urls]
-Homepage = "https://github.com/ohmdreams/fetchgram"
-Repository = "https://github.com/ohmdreams/fetchgram"
+Homepage = "https://github.com/howwohmm/fetchgram"
+Repository = "https://github.com/howwohmm/fetchgram"
 
 [tool.setuptools]
 include-package-data = true

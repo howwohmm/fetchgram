@@ -39,12 +39,12 @@ the famous "carousel lift" was **~90% just the account tripling its following** 
 
 compare each post to what that same account posted **±45 days around it** — not its all-time average. growth and recency cancel out, and you start measuring the content instead of the calendar.
 
-that's it. that's the whole trick. nobody ships it.
+that's it. that's the whole trick. most tools skip it.
 
 ## what it does
 
 - **reads the words inside the images.** most scrapers grab the caption and stop. fetchgram OCRs every frame — quote graphics, carousel slides, on-image text all become searchable data. Apple Vision on mac, tesseract everywhere else.
-- **scores each post against its own era.** the part nobody else does (see above). you see content effects, not calendar effects.
+- **scores each post against its own era.** the part most tools skip (see above). you see content effects, not calendar effects.
 - **free, local, yours.** no api keys, no cloud, no account. runs on your machine; the data never leaves it.
 - **clean data, ready for anything.** out comes a text corpus, a training-ready `jsonl`, a `metrics.json`, and a plain-english `SIGNAL.md`. drop any of it into an LLM and ask your own questions.
 
