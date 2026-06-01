@@ -1,0 +1,52 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "fetchgram"
+version = "0.1.0"
+description = "Era-adjusted Instagram content intelligence — scrape, OCR, and measure what actually works."
+readme = "README.md"
+license = { file = "LICENSE" }
+requires-python = ">=3.9"
+authors = [{ name = "ohm", email = "ohm@ohm.quest" }]
+keywords = ["instagram", "scraper", "ocr", "analytics", "content-strategy"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
+    "Topic :: Internet",
+    "Topic :: Multimedia :: Graphics",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+]
+
+dependencies = [
+    "instaloader>=4.10",
+    "Pillow>=10.0",
+    "pytesseract>=0.3.10",
+]
+
+[project.scripts]
+fetchgram = "fetchgram.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/ohmdreams/fetchgram"
+Repository = "https://github.com/ohmdreams/fetchgram"
+
+[tool.setuptools]
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["fetchgram*"]
+
+[tool.setuptools.package-data]
+fetchgram = ["_vision/*.swift"]

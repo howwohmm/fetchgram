@@ -1,0 +1,46 @@
+# python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.dist-info/
+
+# virtual environments
+.venv/
+venv/
+env/
+.env/
+
+# fetchgram data (potentially large; user should opt in per repo)
+fetchgram-data/
+
+# compiled Vision binary cache
+.cache/
+
+# tools
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# editors
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+
+# env files (never commit secrets)
+.env
+*.env
+
+_review/
+landing.html
+_assets/
+.venv/
