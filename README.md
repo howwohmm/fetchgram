@@ -60,6 +60,14 @@ one command runs the whole pipeline: scrape → OCR → corpus → era-adjusted 
 
 > **now run it on the account whose advice you've been copying.** if their "secret" survives era-adjustment — great, copy away. if it evaporates like the 11.5× did, you just saved yourself a quarter of wasted posting. either way, tell me what you find.
 
+## use it as a Claude skill
+
+prefer talking to it? drop [`skills/fetchgram/SKILL.md`](skills/fetchgram/SKILL.md) into `~/.claude/skills/fetchgram/` and just say:
+
+> **analyze @nike**
+
+Claude installs the CLI if needed, runs the pipeline, and hands you the era-adjusted teardown (and a clean report). the CLI is the engine; the skill is the conversational layer.
+
 ## how it works
 
 1. **scrape** — `fetchgram analyze <handle>` pulls the profile, images only, rate-limit friendly.
